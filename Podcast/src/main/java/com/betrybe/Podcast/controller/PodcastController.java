@@ -1,5 +1,6 @@
 package com.betrybe.Podcast.controller;
 
+import com.betrybe.Podcast.Model.Podcast;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +17,14 @@ public class PodcastController {
     }
 
     @GetMapping("/{id}")
-    public String getPodcast(@PathVariable Long id) {
-        return "Você pediu pelo Podcast com id: %d".formatted(id); // "%d" indica que será um inteiro
+    public Podcast getPodcast(@PathVariable Long id) {
+        Podcast podcast = new Podcast();
+        podcast.setId(id);
+        podcast.setName("Meu podcast");
+        podcast.setContent("O melhor podcast do mundo!");
+        podcast.setUrl("http://www.meupodcast.com.br");
+        return podcast;
+       // return "Você pediu pelo Podcast com id: %d".formatted(id); // "%d" indica que será um inteiro
     }
 
     @GetMapping("/search")
