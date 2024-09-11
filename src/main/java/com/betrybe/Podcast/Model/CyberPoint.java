@@ -1,28 +1,9 @@
 package com.betrybe.Podcast.Model;
 
-public class Podcast {
-    private Long id;
+public class CyberPoint {
     private String name;
     private String url;
-    private String content;
-
-    private String secretToken;
-
-    public String getSecretToken() {
-        return secretToken;
-    }
-
-    public void setSecretToken(String secretToken) {
-        this.secretToken = secretToken;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
+    private Long id;
 
     public String getName() {
         return name;

@@ -18,6 +18,8 @@ public class PodcastService {
     podcast.setUrl("http://www.meupodcast.com.br");
     podcast.setContent("O melhor podcast do mundo!");
 
+    podcast.setSecretToken("super-secret-token-123");
+
     return podcast;
     }
 
@@ -28,6 +30,7 @@ public class PodcastService {
         savedPodcast.setName(podcast.getName());
         savedPodcast.setUrl(podcast.getUrl());
         savedPodcast.setContent(podcast.getContent());
+
 
         return savedPodcast;
     }
