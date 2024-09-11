@@ -57,5 +57,10 @@ public class CyberPointController {
         return ResponseEntity.status(HttpStatus.CREATED).body(cyberPointDto);
     }
 
+    @GetMapping("/search")
+    public String searchCyber(@RequestParam String title) {
+        return "Vc buscou pela loja: %s".formatted(title);
+    }
+
 
 }
