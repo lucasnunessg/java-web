@@ -1,15 +1,29 @@
 package com.betrybe.Podcast.exceptions;
 
+import java.util.Optional;
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        try {
-            Integer resultado = 2 / 0;
-            System.out.println("Será q deu certo?");
-            System.out.println(resultado);
+        System.out.println("Pra finalizar a compra, é necessário ser maior de idade. Informe sua idade: ");
+        Scanner entrada = new Scanner(System.in);
+        int idade = entrada.nextInt();
 
-        }catch (ArithmeticException e) {
-            System.out.println("Ops! não é possível realizar divisão por zero(0).");
+        try{
+            ehMaiorDeIdade(idade);
+            System.out.println("Compra confirmada!");
+        } catch (MenorDeIdadeException e) {
+            System.out.println("Compra recusada, pessoa menor de idade!");
+        } finally {
+            entrada.close();
         }
+    }
 
+    private static boolean ehMaiorDeIdade(int idade) throws MenorDeIdadeException {
+        if (idade < 18) {
+            throw new MenorDeIdadeException();
+        }else {
+            return true;
+        }
     }
 }
